@@ -1,0 +1,25 @@
+server:
+  port: 9080
+  
+spring:
+  # Database
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/nabelia?zeroDateTimeBehavior=round&autoReconnect=true&noAccessToProcedureBodies=true&useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    type: com.zaxxer.hikari.HikariDataSource
+    initialize: false
+  # JPA properties
+  jpa:
+    properties.hibernate.temp.use_jdbc_metadata_defaults: false
+    show_sql: false
+    format_sql: true
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: false
+  # Logging
+  logging:
+    level:
+      org.springframework: INFO
+      org.hibernate: DEBUG
